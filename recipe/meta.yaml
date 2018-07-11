@@ -1,4 +1,4 @@
-{% set version = '0.7' %}
+{% set version = "0.8.5" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/rsconnect_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: 162e9475339e1336d51cad3ddc226f5edf98e9b7661eed3e0c778a80f1408c80
+  sha256: b8726b2f06c711e5d253ee10ea46e84b8e9438fb7d1d6ac08bcffac099545a78
 
 build:
   number: 0
