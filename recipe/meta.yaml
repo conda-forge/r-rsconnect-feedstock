@@ -1,5 +1,4 @@
-{% set version = "0.8.5" %}
-
+{% set version = '0.8.8' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,21 +9,23 @@ package:
 source:
   fn: rsconnect_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/rsconnect_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: b8726b2f06c711e5d253ee10ea46e84b8e9438fb7d1d6ac08bcffac099545a78
+    - {{ cran_mirror }}/src/contrib/rsconnect_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
+  sha256: 91825eca63172ed0d36f02a8db9c4e0a44188bb01af8341558398a5715873705
 
 build:
+  merge_build_host: True  # [win]
   number: 0
+  # r-rcurl is not available under windows
   skip: true  # [win]
-# r-rcurl is not available under windows
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-pki
     - r-rcurl
@@ -33,7 +34,6 @@ requirements:
     - r-packrat >=0.4.8_1
     - r-rstudioapi >=0.5
     - r-yaml >=2.1.5
-
   run:
     - r-base
     - r-pki
@@ -46,18 +46,24 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('rsconnect')"  # [not win]
+    - $R -e "library('rsconnect')"           # [not win]
     - "\"%R%\" -e \"library('rsconnect')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=rsconnect
   license: GPL-2
   summary: Programmatic deployment interface for 'RPubs', 'shinyapps.io', and 'RStudio Connect'.
-    Supported content types include R Markdown documents, Shiny applications, plots,
-    and static web content.
+    Supported content types include R Markdown documents, Shiny applications, Plumber
+    APIs, plots, and static web content.
   license_family: GPL2
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
