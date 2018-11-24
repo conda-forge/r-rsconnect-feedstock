@@ -14,8 +14,9 @@ source:
   sha256: 91825eca63172ed0d36f02a8db9c4e0a44188bb01af8341558398a5715873705
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 1
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
@@ -54,8 +55,7 @@ about:
     Supported content types include R Markdown documents, Shiny applications, Plumber
     APIs, plots, and static web content.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
