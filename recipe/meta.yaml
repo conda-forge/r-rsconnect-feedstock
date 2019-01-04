@@ -1,4 +1,4 @@
-{% set version = '0.8.8' %}
+{% set version = '0.8.12' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,38 +7,35 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: rsconnect_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/rsconnect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: 91825eca63172ed0d36f02a8db9c4e0a44188bb01af8341558398a5715873705
+  sha256: e81831381ed909bfc2fe44c656f915081116eeebd0a2be3d938a6df0e6ce87ff
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 1000
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
+
   host:
     - r-base
-    - r-pki
     - r-rcurl
-    - r-rjsonio
-    - r-digest
+    - r-jsonlite
+    - r-openssl
     - r-packrat >=0.4.8_1
     - r-rstudioapi >=0.5
     - r-yaml >=2.1.5
   run:
     - r-base
-    - r-pki
     - r-rcurl
-    - r-rjsonio
-    - r-digest
+    - r-jsonlite
+    - r-openssl
     - r-packrat >=0.4.8_1
     - r-rstudioapi >=0.5
     - r-yaml >=2.1.5
@@ -59,9 +56,21 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: rsconnect
+# Type: Package
+# Title: Deployment Interface for R Markdown Documents and Shiny Applications
+# Version: 0.8.12
+# Author: JJ Allaire
+# Maintainer: Jonathan McPherson <jonathan@rstudio.com>
+# Description: Programmatic deployment interface for 'RPubs', 'shinyapps.io', and 'RStudio Connect'. Supported content types include R Markdown documents, Shiny applications, Plumber APIs, plots, and static web content.
+# Depends: R (>= 3.0.0)
+# Imports: openssl, RCurl, jsonlite, packrat (>= 0.4.8-1), yaml (>= 2.1.5), rstudioapi (>= 0.5)
+# Suggests: knitr, testthat, rmarkdown (>= 1.1), plumber (>= 0.3.2), shiny, sourcetools, xtable
+# License: GPL-2
+# RoxygenNote: 6.1.0
+# NeedsCompilation: no
+# Packaged: 2018-12-04 20:52:56 UTC; jmcphers
+# Repository: CRAN
+# Date/Publication: 2018-12-05 07:50:03 UTC
