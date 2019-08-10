@@ -1,4 +1,4 @@
-{% set version = '0.8.13' %}
+{% set version = '0.8.15' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rsconnect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: ae201465226d3b440aa3dd59bb4fd4cf20f0c09455d8d80563d1378bd19b6e01
+  sha256: 31e715b4dff765ef4a0d73ddadd8330d50e8d1dfbb63b03fbf782fdad96a0c05
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -25,7 +25,7 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-rcurl
+    - r-curl
     - r-jsonlite
     - r-openssl
     - r-packrat >=0.4.8_1
@@ -33,7 +33,7 @@ requirements:
     - r-yaml >=2.1.5
   run:
     - r-base
-    - r-rcurl
+    - r-curl
     - r-jsonlite
     - r-openssl
     - r-packrat >=0.4.8_1
@@ -61,16 +61,16 @@ extra:
 # Package: rsconnect
 # Type: Package
 # Title: Deployment Interface for R Markdown Documents and Shiny Applications
-# Version: 0.8.13
+# Version: 0.8.15
 # Author: JJ Allaire
 # Maintainer: Jonathan McPherson <jonathan@rstudio.com>
 # Description: Programmatic deployment interface for 'RPubs', 'shinyapps.io', and 'RStudio Connect'. Supported content types include R Markdown documents, Shiny applications, Plumber APIs, plots, and static web content.
 # Depends: R (>= 3.0.0)
-# Imports: openssl, RCurl, jsonlite, packrat (>= 0.4.8-1), yaml (>= 2.1.5), rstudioapi (>= 0.5)
-# Suggests: knitr, testthat, rmarkdown (>= 1.1), plumber (>= 0.3.2), reticulate, shiny, sourcetools, xtable
+# Imports: curl, jsonlite, openssl, packrat (>= 0.4.8-1), rstudioapi (>= 0.5), yaml (>= 2.1.5)
+# Suggests: RCurl, callr, httpuv, knitr, plumber (>= 0.3.2), reticulate, rmarkdown (>= 1.1), shiny, sourcetools, testthat, xtable
 # License: GPL-2
 # RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2019-01-10 19:15:46 UTC; jmcphers
+# Packaged: 2019-07-22 21:53:14 UTC; jmcphers
 # Repository: CRAN
-# Date/Publication: 2019-01-10 19:50:03 UTC
+# Date/Publication: 2019-07-22 22:50:02 UTC
