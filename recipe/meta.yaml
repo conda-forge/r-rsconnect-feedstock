@@ -26,6 +26,7 @@ requirements:
   host:
     - r-base
     - r-curl
+    - r-digest
     - r-jsonlite
     - r-openssl
     - r-packrat >=0.4.8_1
@@ -34,6 +35,7 @@ requirements:
   run:
     - r-base
     - r-curl
+    - r-digest
     - r-jsonlite
     - r-openssl
     - r-packrat >=0.4.8_1
