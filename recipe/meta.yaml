@@ -1,4 +1,4 @@
-{% set version = "0.8.26" %}
+{% set version = "0.8.27" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rsconnect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: faafabbed803743799b345051f221aef2b4497b421fc98092ca41c05ef6b5fed
+  sha256: 0a44d5605fc7cd6855ea0235d662e4a323a24a2c214cc4f1696afbca3a8f169c
 
 build:
   merge_build_host: true  # [win]
