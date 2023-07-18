@@ -3,11 +3,11 @@ About r-rsconnect-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rsconnect-feedstock/blob/main/LICENSE.txt)
 
-Home: https://CRAN.R-project.org/package=rsconnect
+Home: https://github.com/rstudio/rsconnect
 
 Package license: GPL-2.0-only
 
-Summary: Programmatic deployment interface for 'RPubs', 'shinyapps.io', and 'RStudio Connect'. Supported content types include R Markdown documents, Shiny applications, Plumber APIs, plots, and static web content.
+Summary: Programmatic deployment interface for 'RPubs', 'shinyapps.io', and 'Posit Connect'. Supported content types include R Markdown documents, Shiny applications, Plumber APIs, plots, and static web content.
 
 Current build status
 ====================
