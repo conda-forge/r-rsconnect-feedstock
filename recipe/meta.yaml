@@ -23,8 +23,10 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-pki
     - r-cli
     - r-curl
     - r-digest
@@ -38,6 +40,7 @@ requirements:
     - r-yaml >=2.1.5
   run:
     - r-base
+    - r-pki
     - r-cli
     - r-curl
     - r-digest
