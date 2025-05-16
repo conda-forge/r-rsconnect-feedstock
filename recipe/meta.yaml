@@ -1,4 +1,4 @@
-{% set version = "1.3.4" %}
+{% set version = "1.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rsconnect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: fda63f86081d743b8a8804125cdf1a33e4adbc3ab3ee6ca1b9615b8f2954c751
+  sha256: 11570127289bc7eca96c5030073b0dd1f7b0089c8bf8e3bfe820b8d0cd56c77e
 
 build:
   number: 0
@@ -25,9 +25,11 @@ requirements:
   host:
     - r-base
     - r-pki
+    - r-rcpptoml
     - r-cli
     - r-curl
     - r-digest
+    - r-jose
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
@@ -39,9 +41,11 @@ requirements:
   run:
     - r-base
     - r-pki
+    - r-rcpptoml
     - r-cli
     - r-curl
     - r-digest
+    - r-jose
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
