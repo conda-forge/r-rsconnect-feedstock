@@ -25,9 +25,11 @@ requirements:
   host:
     - r-base
     - r-pki
+    - r-rcpptoml
     - r-cli
     - r-curl
     - r-digest
+    - r-jose
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
@@ -39,9 +41,11 @@ requirements:
   run:
     - r-base
     - r-pki
+    - r-rcpptoml
     - r-cli
     - r-curl
     - r-digest
+    - r-jose
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
