@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rsconnect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsconnect/rsconnect_{{ version }}.tar.gz
-  sha256: 11570127289bc7eca96c5030073b0dd1f7b0089c8bf8e3bfe820b8d0cd56c77e
+  sha256: 18eea7c62dc64ab4c900de5ad0d90d6eed551fe8690e556c2dfc7f35890aae40
 
 build:
   number: 0
