@@ -17,6 +17,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -25,11 +29,9 @@ requirements:
   host:
     - r-base
     - r-pki
-    - r-rcpptoml
     - r-cli
     - r-curl
     - r-digest
-    - r-jose
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
@@ -37,15 +39,14 @@ requirements:
     - r-renv >=1.0.0
     - r-rlang >=1.0.0
     - r-rstudioapi >=0.5
+    - r-snowflakeauth
     - r-yaml >=2.1.5
   run:
     - r-base
     - r-pki
-    - r-rcpptoml
     - r-cli
     - r-curl
     - r-digest
-    - r-jose
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
@@ -53,6 +54,7 @@ requirements:
     - r-renv >=1.0.0
     - r-rlang >=1.0.0
     - r-rstudioapi >=0.5
+    - r-snowflakeauth
     - r-yaml >=2.1.5
 
 test:
