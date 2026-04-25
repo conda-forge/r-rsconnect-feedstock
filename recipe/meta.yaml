@@ -32,6 +32,7 @@ requirements:
     - r-cli
     - r-curl
     - r-digest
+    - r-httr2
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
@@ -47,6 +48,7 @@ requirements:
     - r-cli
     - r-curl
     - r-digest
+    - r-httr2
     - r-jsonlite
     - r-lifecycle
     - r-openssl >=2.0.0
